@@ -1,0 +1,43 @@
+{
+	"manifest_version": 2,
+	"name": "Spritzeur",
+	"version": "2.0",
+	"description": "Spritzeur: read faster",
+	"homepage_url": "http://spritzeur.free.fr",
+	"icons": {
+		"32": "images/spritzeur32.png",
+		"48": "images/spritzeur48.png"
+	},
+
+	"content_scripts": [{
+		"matches" : ["<all_urls>"],
+		"js": [
+			"js/jquery.js",
+			"js/jquery-ui.js",
+			"js/open-spritz.js",
+			"js/purify.min.js"
+		]
+	}],
+	
+	"background": {
+		"scripts": ["js/background.js"]
+	},
+	"page_action": {
+		"default_icon": "images/spritzeur32.png"
+	},
+	"permissions": [
+		"activeTab",
+		"tabs",
+		"storage"
+	],
+	"web_accessible_resources": [
+		"templates/template.html",
+		"templates/template.css",
+		"images/spritzeur32.png",
+		"images/fermer.png",
+		"images/menu.png",
+		"images/break.png",
+		"images/play.png"
+	]
+
+}
